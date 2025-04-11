@@ -31,7 +31,7 @@ public class EmployeeController {
  
     @RequestMapping(value= "/add", method = RequestMethod.POST,consumes = { MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<String> addEmployee(@RequestBody String empjson) throws URISyntaxException {    	
-        logger.debug("adding employees.");          
+        logger.debug("adding employees and loggin.");
         RequestEntity request = RequestEntity
         	     .post(new URI(env.getRequiredProperty("emp.create.url"))).contentType(MediaType.APPLICATION_JSON)
         	     .body(empjson);
